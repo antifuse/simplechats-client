@@ -117,6 +117,11 @@ public class Controller extends Application implements Initializable {
                 if(!this.outArea.getScene().getWindow().isFocused()) trayIcon.displayMessage(message.data(0), message.data(1), MessageType.NONE);
                 break;
             }
+            case DIRECT: {
+                this.outArea.appendText("\n[" + message.data(0) + " >> " + this.client.getUsername() + "] " + message.data(1));
+                if(!this.outArea.getScene().getWindow().isFocused()) trayIcon.displayMessage("[DM]" + message.data(0), message.data(1), MessageType.NONE);
+                break;
+            }
             case SYSTEM: {
                 this.outArea.appendText("\n" + getString(message.data(0)));
                 break;

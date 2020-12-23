@@ -23,6 +23,10 @@ public class Client {
         this.username = username;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
     public void connect(SocketAddress ip) {
         try {
             this.socket.connect(ip);
@@ -50,6 +54,8 @@ public class Client {
         else if (content.split(" ")[0].equals("/name")) {
             if (content.split(" ").length < 2) return;
             this.sendToServer(Transmission.TransmissionType.RQ_NICK, content.split(" ")[1]);
+        } else if (content.split(" ")[0].equals("/msg")) {
+            this.sendToServer(Transmission.TransmissionType.RQ_DIRECT, content.split(" ")[1], content.substring(6+content.split(" ")[1].length()));
         } else {
             System.out.println("Requesting message " + content);
             this.sendToServer(Transmission.TransmissionType.RQ_SEND, content);
