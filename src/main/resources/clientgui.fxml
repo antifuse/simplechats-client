@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.antifuse.simplechats.client.Controller">
+   <children>
+      <HBox>
+         <children>
+            <TextField fx:id="address" promptText="Server Address" />
+            <TextField fx:id="name" promptText="Username" />
+            <Button mnemonicParsing="false" onMousePressed="#handleConnect" text="Connect" />
+         </children>
+      </HBox>
+      <TextArea fx:id="outArea" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
+       <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" GridPane.rowIndex="1">
+         <children>
+            <TextField fx:id="message" onKeyPressed="#handleEnter" promptText="Message..." HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onMousePressed="#handleSend" text="Send" HBox.hgrow="SOMETIMES" />
+         </children>
+       </HBox>
+   </children>
+</VBox>
