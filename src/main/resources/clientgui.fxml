@@ -7,16 +7,16 @@
    <children>
       <HBox>
          <children>
-            <TextField fx:id="address" promptText="Server Address" />
-            <TextField fx:id="name" promptText="Username" />
-            <Button mnemonicParsing="false" onMousePressed="#handleConnect" text="Connect" />
+            <TextField fx:id="address" promptText="%ui.address" />
+            <TextField fx:id="name" promptText="%ui.username" />
+            <Button mnemonicParsing="false" onMousePressed="#handleConnect" text="%ui.connect" />
          </children>
       </HBox>
       <TextArea fx:id="outArea" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
        <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" GridPane.rowIndex="1">
          <children>
-            <TextField fx:id="message" onKeyPressed="#handleEnter" promptText="Message..." HBox.hgrow="ALWAYS" />
-            <Button mnemonicParsing="false" onMousePressed="#handleSend" text="Send" HBox.hgrow="SOMETIMES" />
+            <TextField fx:id="message" onKeyPressed="#handleEnter" promptText="%ui.messagePrompt" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onMousePressed="#handleSend" text="%ui.send" HBox.hgrow="SOMETIMES" />
          </children>
        </HBox>
    </children>
