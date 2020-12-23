@@ -139,6 +139,8 @@ public class Controller extends Application implements Initializable {
         primaryStage.setScene(scene);
         primaryStage.show();
         TextArea out = (TextArea) loader.getNamespace().get("outArea");
+        TextField address = (TextField) loader.getNamespace().get("address");
+        if (this.getParameters().getNamed().containsKey("defaultIP")) address.setText(this.getParameters().getNamed().get("defaultIP"));
         out.setWrapText(true);
         out.textProperty().addListener((ChangeListener<? super String>) (ObservableValue<? extends String> observable, String old, String n)->{
             out.setScrollTop(Double.MAX_VALUE);
