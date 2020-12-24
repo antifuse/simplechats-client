@@ -1,4 +1,5 @@
 # simplechats-client
+![](https://img.shields.io/github/v/release/antifuse/simplechats-client)
 ## Overview
 SimpleChats is a rudimentary chat system that uses Java Sockets. It uses the eponymous protocol, specified below. Don't expect too much from it.
 ## The Protocol
