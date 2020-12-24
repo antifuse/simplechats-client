@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'eu.antifuse'
-version '0.2'
+version '0.2.1'
 sourceCompatibility = targetCompatibility = 8
 mainClassName = 'eu.antifuse.simplechats.client.Main'
 

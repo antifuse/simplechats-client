@@ -140,7 +140,9 @@ public class Controller extends Application implements Initializable {
         primaryStage.show();
         TextArea out = (TextArea) loader.getNamespace().get("outArea");
         TextField address = (TextField) loader.getNamespace().get("address");
+        TextField username = (TextField) loader.getNamespace().get("name");
         if (this.getParameters().getNamed().containsKey("defaultIP")) address.setText(this.getParameters().getNamed().get("defaultIP"));
+        if (this.getParameters().getNamed().containsKey("defaultName")) username.setText(this.getParameters().getNamed().get("defaultName"));
         out.setWrapText(true);
         out.textProperty().addListener((ChangeListener<? super String>) (ObservableValue<? extends String> observable, String old, String n)->{
             out.setScrollTop(Double.MAX_VALUE);
@@ -149,7 +151,7 @@ public class Controller extends Application implements Initializable {
     }
 
     @Override
-    public void stop() throws Exception {
+    public void stop() {
         if (this.client != null) this.client.disconnect();
         System.exit(0);
     }
